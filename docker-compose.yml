@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+    app:
+        build:
+            context: .
+            dockerfile: .docker/php/Dockerfile
+        image: ireactor
+        container_name: ireactor
+        restart: always
+        ports:
+            - 8001:80
+            - 8002:443
+        volumes:
+            - .:/var/www/html
